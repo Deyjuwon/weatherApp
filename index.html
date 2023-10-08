@@ -53,8 +53,11 @@
         async function checkWeather(city) {
             const response = await fetch(apiUrl + city + `&APPID=${apiKey}`);
             console.log(response.status)
-            if (response.status === 404) {
+            if (response.status === 404 || response.status === 400) {
                 document.querySelector(".error").style.display = "block";
+                document.querySelector(".weather").style.display = "none";
+            } else if(response.status === 200) {
+                document.querySelector(".error").style.display = "none";
             }
             
             var data = await response.json()
@@ -69,6 +72,7 @@
             var weatherCondition = data.weather[0].main
 
             document.querySelector(".weather-icon").src = "images/" + weatherCondition + ".png"
+        
             document.querySelector(".weather").style.display = "block";
         
             

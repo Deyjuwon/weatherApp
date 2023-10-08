@@ -101,9 +101,23 @@ body {
 }
 
 .error {
-    text-align: left;
-    margin-left: 10px;
-    font-size: 14px;
-    margin-top: 10px;
+    text-align: center;
+    /* margin-left: 10px; */
+    font-size: 22px;
+    margin-top: 30px;
     display: none;
 }
+
+
+/* @media (max-width: 477px) {
+    .card {
+        width: 100%;
+        max-width: 80%;
+        background: linear-gradient(135deg, #E8A66C, #D87659);
+        color: #fff;
+        margin: 100px auto 0;
+        border-radius: 20px;
+        padding: 40px 35px;
+        text-align: center;
+    }
+} */
